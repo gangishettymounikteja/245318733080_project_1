@@ -38,7 +38,7 @@ app.get('/hospitals', middleware.checkToken, function(req, res) {
   app.post("/search",middleware.checkToken,(req,res)=>{
     var status=req.body.status;
     var name=req.body.name;
-    var hs=db.collection('Ventilators').find({"status":status,"name":name}).toArray().then(result=>res.json(result));
+    var hs=db.collection('ventilators').find({"status":status,"name":name}).toArray().then(result=>res.json(result));
   });
 //search hospital by name
   app.post("/searchhospital",middleware.checkToken,(req,res)=>{
